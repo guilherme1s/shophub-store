@@ -1,0 +1,25 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-white: #ffffff;
+  --color-primary: #ee4d2d;
+  --color-yellow: #ffd700;
+}
+
+@layer base {
+  body {
+    background: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body,
+  input,
+  textarea,
+  button {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
