@@ -5,6 +5,8 @@
   --color-white: #ffffff;
   --color-primary: #ee4d2d;
   --color-yellow: #ffd700;
+
+  --color-teste: #F2674B;
 }
 
 @layer base {
