@@ -4,25 +4,22 @@ import { useState } from "react";
 export function Search() {
   const [inputText, setInputText] = useState("");
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputText(e.target.value);
-  };
-
   return (
-    <div className="flex items-center gap-3 bg-card border border-border rounded-lg px-4 h-12 w-full">
-      <span className="text-muted-foreground">
-        <SearchOutlinedIcon fontSize="small" />
+    <div className="flex items-center w-full border border-border rounded-lg">
+      <span className="flex items-center justify-center px-4 text-muted-foreground">
+        <SearchOutlinedIcon fontSize="medium" />
       </span>
+
       <input
         type="text"
-        className="bg-transparent border-0 outline-none text-sm w-full placeholder-muted-foreground"
+        className="text-lg outline-none border-0 px-2 py-3 placeholder:text-muted-foreground"
         placeholder="Pesquisar produtos..."
         value={inputText}
-        onChange={handleInputChange}
+        onChange={(e) => setInputText(e.target.value)}
       />
-
+      
       {inputText !== "" && (
-        <button className="bg-primary text-white px-4 py-1 rounded-lg cursor-pointer hover:bg-teste">
+        <button className="bg-primary text-white px-5 py-3 text-base rounded-r-lg cursor-pointer hover:bg-primary-hover transition">
           Buscar
         </button>
       )}

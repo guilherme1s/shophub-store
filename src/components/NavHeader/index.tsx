@@ -8,15 +8,15 @@ export function NavHeader() {
     <nav>
       <ul className="flex gap-4">
         <NavLink to="/" title="início">
-          <li className="flex gap-1 items-center">
-            <HomeOutlinedIcon fontSize="small" />
+          <li className="flex gap-1 items-center hover:text-primary transition text-2xl">
+            <HomeOutlinedIcon fontSize="large" />
             Iníco
           </li>
         </NavLink>
 
         <NavLink to="/catalogo" title="Catálogo">
-          <li className="flex gap-1 items-center">
-            <LocalOfferOutlinedIcon fontSize="small" />
+          <li className="flex gap-1 items-center hover:text-primary transition text-2xl">
+            <LocalOfferOutlinedIcon fontSize="medium" />
             Catálogo
           </li>
         </NavLink>

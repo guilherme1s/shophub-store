@@ -12,7 +12,7 @@ export function MobileMenu({ open }: MobileMenuProps) {
     <nav className="p-4 border-b-4 border-primary">
       <Search />
 
-      <div className="flex gap-2 flex-col mt-4">
+      <div className="flex gap-2 flex-col mt-4 text-2xl">
         <NavLink to="/" title="início">
           <li className="flex gap-1">Iníco</li>
         </NavLink>

@@ -14,29 +14,28 @@ export function Header() {
 
   return (
     <>
-      <header className={`${openMenu ? " " : "border-b-4 border-primary"}`}>
-        <div className="text-center text-xs font-bold py-2 bg-primary text-white">
-          <p>
-            Frete Grátis em Compras Acima de R$ 50 | Use o Código BEMVINDO10
-          </p>
+      <header className={`${openMenu ? "" : "border-b-4 border-primary"}`}>
+        <div className="text-center text-xs md:text-sm font-semibold py-2 bg-primary text-white">
+          Frete Grátis em Compras Acima de R$ 50 | Use o Código BEMVINDO10
         </div>
 
-        <div className="flex items-center gap-3 px-4 lg:px-32 py-3">
-          <div className="flex w-full md:w-auto items-center justify-between md:justify-start">
-            <h1 className="text-3xl font-bold text-primary">ShopHub</h1>
+        <div className="flex items-center justify-between px-4 md:px-16 lg:px-32 xl:px-72 py-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-primary">
+            ShopHub
+          </h1>
 
-            <button className="md:hidden flex gap-4">
-              <ShoppingCart />
-
-              <button onClick={handleOpenMenu}>
-                <MenuIcon fontSize="medium" />
-              </button>
-            </button>
+          <div className="hidden md:flex items-center gap-6 flex-1">
+            <div className="w-full ml-4 lg:ml-10">
+              <Search />
+            </div>
+            <NavHeader />
           </div>
 
-          <div className="hidden md:flex items-center gap-4 w-full">
-            <Search />
-            <NavHeader />
+          <div className="flex md:hidden items-center gap-3">
+            <ShoppingCart />
+            <button onClick={handleOpenMenu} className="p-2">
+              <MenuIcon fontSize="large" />
+            </button>
           </div>
         </div>
       </header>

@@ -5,8 +5,9 @@
   --color-white: #ffffff;
   --color-primary: #ee4d2d;
   --color-yellow: #ffd700;
+  --color-foreground: #1a1a1a;
 
-  --color-teste: #F2674B;
+  --color-primary-hover: #F2674B;
 }
 
 @layer base {
