@@ -5,7 +5,7 @@ export function ShoppingCart() {
     return (
         <NavLink to="/carrinho" title="início">
           <span className="flex gap-1">
-            <ShoppingCartOutlinedIcon fontSize="large" />
+            <ShoppingCartOutlinedIcon fontSize="medium" />
           </span>
         </NavLink>
     );
