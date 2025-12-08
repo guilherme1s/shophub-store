@@ -12,7 +12,7 @@ export function Search() {
 
       <input
         type="text"
-        className="text-lg outline-none border-0 px-2 py-3 placeholder:text-muted-foreground"
+        className="text-lg outline-none border-0 px-2 py-3 placeholder:text-muted-foreground w-full"
         placeholder="Pesquisar produtos..."
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
