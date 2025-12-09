@@ -50,7 +50,7 @@ export function Footer() {
 
   return (
     <footer className="w-full bg-foreground text-white py-10">
-      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-8 py-10 w-auto mx-4 lg:mx-72 border-b-[0.25px] border-gray-300">
+      <div className="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-5 gap-8 py-10 w-auto max-w-7xl mx-4 md:mx-8 xl:mx-auto border-b-[0.25px] border-gray-300">
         <div>
           <h1 className="font-bold mb-4 text-lg">ShopHub</h1>
           <p className="text-gray-300 text-md">
@@ -98,7 +98,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="text-md flex flex-col gap-2 xl:flex-row justify-between mx-4 lg:mx-72 mt-10 text-gray-300">
+      <div className="text-md flex flex-col gap-2 lg:flex-row justify-between w-auto max-w-7xl mx-4 md:mx-8 xl:mx-auto mt-10 text-gray-300">
         <p>© 2025 ShopHub. Todos os direitos reservados.</p>
 
         <ul className="flex gap-4">
