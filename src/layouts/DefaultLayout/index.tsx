@@ -9,8 +9,12 @@ interface DefaultLayoutProps {
 export function DefaultLayout({ children }: DefaultLayoutProps) {
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-1">{children}</main>
+      <div className="fixed top-0 left-0 w-full bg-white z-50">
+        <Header />
+      </div>
+
+      <main className="flex-1 pt-20">{children}</main>
+
       <Footer />
     </div>
   );
