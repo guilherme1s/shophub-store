@@ -25,14 +25,15 @@ export function ProductCard({
   ...props
 }: ProductCardProps) {
   return (
-    <div className="w-full flex flex-col gap-2  max-w-56">
-      <div className="flex-1 justify-end flex">
+    <div className="w-full flex flex-col gap-2 max-w-56 justify-between">
+      <div className="relative w-full aspect-square rounded-xl bg-gray-100 flex items-center justify-center overflow-hidden">
         {offBadge && (
-          <span className="py-2 m-2 p-1 rounded-xl absolute w-auto bg-primary text-white font-bold">
+          <span className="absolute top-2 left-2 py-1 px-2 rounded-lg bg-primary text-white font-bold z-10">
             -{offBadgeValue}%
           </span>
         )}
-        <img {...props} className="rounded-xl" />
+
+        <img {...props} className="max-w-full max-h-full object-contain" />
       </div>
 
       <div>
@@ -47,11 +48,7 @@ export function ProductCard({
         )}
       </div>
 
-      {sellCount ? (
-        <p className="text-gray-600">{sellCount} vendidos</p>
-      ) : (
-        <p className="text-gray-600">{sellCount}0 vendidos</p>
-      )}
+      {sellCount && <p className="text-gray-600">{sellCount} vendidos</p>}
 
       <button className="bg-primary text-white w-full rounded-lg py-1 font-bold cursor-pointer hover:bg-primary-hover">
         <div className="flex gap-2 justify-center items-center">

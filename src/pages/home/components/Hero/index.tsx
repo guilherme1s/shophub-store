@@ -38,8 +38,8 @@ export function Hero({ ...props }: HeroProps) {
           </div>
 
           <div className="hidden md:flex flex-1">
-            <div className="relative w-full aspect-square rounded-2xl bg-white/10 overflow-hidden">
-              <img {...props} className="w-full h-full object-cover" />
+            <div className="relative w-full aspect-square rounded-2xl bg-white/10 overflow-hidden p-12">
+              <img {...props} className="w-full h-full object-contain" />
             </div>
           </div>
         </div>
