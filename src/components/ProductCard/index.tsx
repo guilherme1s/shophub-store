@@ -26,7 +26,7 @@ export function ProductCard({
 }: ProductCardProps) {
   return (
     <div className="w-full flex flex-col gap-2 max-w-56 justify-between">
-      <div className="relative w-full aspect-square rounded-xl bg-gray-100 flex items-center justify-center overflow-hidden">
+      <div className="relative w-full aspect-square p-4 hover:p-3 transition cursor-pointer rounded-xl bg-gray-100 flex items-center justify-center overflow-hidden">
         {offBadge && (
           <span className="absolute top-2 left-2 py-1 px-2 rounded-lg bg-primary text-white font-bold z-10">
             -{offBadgeValue}%
