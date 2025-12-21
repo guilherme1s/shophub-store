@@ -1,6 +1,7 @@
+import type { ImgHTMLAttributes } from "react";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Rating } from "../Rating";
-import type { ImgHTMLAttributes } from "react";
+import { formatPrice } from "../../utils/formatPrice";
 
 interface ProductCardProps extends ImgHTMLAttributes<HTMLImageElement> {
   title: string;
@@ -42,9 +43,11 @@ export function ProductCard({
       </div>
 
       <div className="flex gap-2 flex-col md:flex-row items-baseline">
-        <p className="text-primary font-bold text-xl">R$ {price}</p>
+        <p className="text-primary font-bold text-xl">{formatPrice(price)}</p>
         {oldPrice && (
-          <p className="line-through text-gray-600 text-sm">R$ {oldPrice}</p>
+          <p className="line-through text-gray-600 text-sm">
+            {formatPrice(oldPrice)}
+          </p>
         )}
       </div>
 
