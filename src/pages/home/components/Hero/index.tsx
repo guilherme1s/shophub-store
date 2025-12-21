@@ -2,10 +2,18 @@ import type { ImgHTMLAttributes } from "react";
 import { Chip } from "../../../../components/Chip";
 import FlashOnIcon from "@mui/icons-material/FlashOn";
 import { NavLink } from "react-router-dom";
+import { Skeleton } from "../../../../components/Skeleton";
 
-interface HeroProps extends ImgHTMLAttributes<HTMLImageElement> {}
+interface HeroProps extends ImgHTMLAttributes<HTMLImageElement> {
+  isLoading?: boolean;
+  isError?: boolean;
+}
 
-export function Hero({ ...props }: HeroProps) {
+export function Hero({
+  isLoading = false,
+  isError = false,
+  ...props
+}: HeroProps) {
   return (
     <section className="bg-primary text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-0">
@@ -39,7 +47,17 @@ export function Hero({ ...props }: HeroProps) {
 
           <div className="hidden md:flex flex-1">
             <div className="relative w-full aspect-square rounded-2xl bg-white/10 overflow-hidden p-12">
-              <img {...props} className="w-full h-full object-contain" />
+              {isLoading && <Skeleton />}
+
+              {!isError && !isLoading && (
+                <p className="text-white text-center text-md">
+                  Não foi possível carregar a imagem
+                </p>
+              )}
+
+              {isError && !isLoading && (
+                <img {...props} className="w-full h-full object-contain" />
+              )}
             </div>
           </div>
         </div>
