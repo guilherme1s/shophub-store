@@ -4,13 +4,15 @@ import { ShopCategory } from "./components/ShopCategory";
 import { categories } from "../../data/categories";
 
 import { Container } from "../../components/Container";
-import { useProduct } from "../../hooks/useProduct";
-import { useEffect, useMemo, useState } from "react";
+import { useProduct } from "../../contexts/ProductContext";
+import { useEffect, useState } from "react";
 import { BestSeller } from "./components/BestSeller";
+import { useTopRatedProducts } from "../../hooks/useTopRatedProducts";
 
 export function Home() {
   const { products, error, loading } = useProduct();
   const [randomIndex, setRandomIndex] = useState(0);
+  const topRatedPRoducts = useTopRatedProducts();
 
   useEffect(() => {
     if (products.length === 0) return;
@@ -21,12 +23,6 @@ export function Home() {
 
   const heroImage = products[randomIndex]?.image;
 
-  const getBestSellerProducts = useMemo(() => {
-    return [...products]
-      .sort((a, b) => b.rating.count - a.rating.count)
-      .slice(0, 5);
-  }, [products]);
-  
   return (
     <main>
       <Hero src={heroImage} isLoading={loading} isError={!error} />
@@ -37,11 +33,7 @@ export function Home() {
         </Container>
       </section>
 
-      <BestSeller
-        loading={loading}
-        products={getBestSellerProducts}
-        error={error}
-      />
+      <BestSeller loading={loading} products={topRatedPRoducts} error={error} />
 
       <ShopCategory content={categories} title="Compre por categoria" />
     </main>

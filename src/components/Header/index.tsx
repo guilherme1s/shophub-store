@@ -4,6 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { ShoppingCart } from "../ShoppingCart";
 import { MobileMenu } from "../MobileMenu";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 export function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -20,9 +21,11 @@ export function Header() {
         </div>
 
         <div className="flex items-center justify-between max-w-7xl mx-4 md:mx-8 xl:mx-auto py-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-primary">
-            ShopHub
-          </h1>
+          <NavLink to="/">
+            <h1 className="text-3xl md:text-4xl font-bold text-primary cursor-pointer">
+              ShopHub
+            </h1>
+          </NavLink>
 
           <div className="hidden md:flex items-center gap-6 flex-1">
             <div className="w-full ml-4 lg:ml-10">

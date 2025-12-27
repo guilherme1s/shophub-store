@@ -1,3 +1,4 @@
+import { NotFoundProducts } from "../../pages/catalog/components/NotFoundProducts";
 import type { Product } from "../../types/product";
 import { ProductCard } from "../ProductCard";
 import { Skeleton } from "../Skeleton";
@@ -5,10 +6,16 @@ import { Skeleton } from "../Skeleton";
 interface ProductGridProps {
   loading: boolean;
   error: null | string;
+  notFound: boolean;
   products: Product[];
 }
 
-export function ProductGrid({ error, loading, products }: ProductGridProps) {
+export function ProductGrid({
+  error,
+  loading,
+  notFound,
+  products,
+}: ProductGridProps) {
   return (
     <div
       className={
@@ -19,9 +26,15 @@ export function ProductGrid({ error, loading, products }: ProductGridProps) {
     >
       {error && <p className="text-md">Erro ao obter os produtos</p>}
       {loading && <Skeleton />}
+      {notFound && (
+        <div className="col-span-full">
+          <NotFoundProducts />
+        </div>
+      )}
 
       {!error &&
         !loading &&
+        !notFound &&
         products.map((product) => {
           return (
             <ProductCard
