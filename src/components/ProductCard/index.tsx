@@ -1,5 +1,4 @@
 import type { ImgHTMLAttributes } from "react";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Rating } from "../Rating";
 import { formatPrice } from "../../utils/formatPrice";
 
@@ -53,10 +52,11 @@ export function ProductCard({
 
       {sellCount && <p className="text-gray-600">{sellCount} vendidos</p>}
 
-      <button className="bg-primary text-white w-full rounded-lg py-1 font-bold cursor-pointer hover:bg-primary-hover">
+      <button
+        className="bg-primary text-white w-full rounded-lg py-1 font-bold cursor-pointer hover:bg-primary-hover"
+      >
         <div className="flex gap-2 justify-center items-center">
-          <ShoppingCartOutlinedIcon fontSize="small" />
-          Adicionar
+          Comprar
         </div>
       </button>
     </div>

@@ -21,11 +21,33 @@ export function Home() {
     setRandomIndex(productsCount);
   }, [products]);
 
-  const heroImage = products[randomIndex]?.image;
+  const heroImage = products[randomIndex];
+  const heroImageData = heroImage
+    ? {
+        id: heroImage.id,
+        image: heroImage.image,
+        title: heroImage.title,
+      }
+    : { id: "", image: "", title: "" };
+
+  const slugify = (text: string) => {
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  };
 
   return (
     <main>
-      <Hero src={heroImage} isLoading={loading} isError={!error} />
+      <Hero
+        src={heroImageData.image}
+        isLoading={loading}
+        isError={!error}
+        title={heroImageData.title}
+        url={`/produto/${heroImageData.id}/${slugify(heroImageData.title)}`}
+      />
 
       <section className="py-8 mb-20 border-b border-gray-300">
         <Container>

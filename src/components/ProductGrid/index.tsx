@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { NotFoundProducts } from "../../pages/catalog/components/NotFoundProducts";
 import type { Product } from "../../types/product";
 import { ProductCard } from "../ProductCard";
@@ -6,7 +7,7 @@ import { Skeleton } from "../Skeleton";
 interface ProductGridProps {
   loading: boolean;
   error: null | string;
-  notFound: boolean;
+  notFound?: boolean;
   products: Product[];
 }
 
@@ -16,6 +17,15 @@ export function ProductGrid({
   notFound,
   products,
 }: ProductGridProps) {
+  const slugify = (text: string) => {
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+  };
+
   return (
     <div
       className={
@@ -37,14 +47,20 @@ export function ProductGrid({
         !notFound &&
         products.map((product) => {
           return (
-            <ProductCard
+            <NavLink
               key={product.id}
-              src={product.image}
+              to={`/produto/${product.id}/${slugify(product.title)}`}
               title={product.title}
-              price={product.price}
-              rating={product.rating.rate}
-              reviews={product.rating.count}
-            />
+              className="flex"
+            >
+              <ProductCard
+                src={product.image}
+                title={product.title}
+                price={product.price}
+                rating={product.rating.rate}
+                reviews={product.rating.count}
+              />
+            </NavLink>
           );
         })}
     </div>

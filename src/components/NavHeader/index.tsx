@@ -3,7 +3,11 @@ import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
 import { NavLink } from "react-router-dom";
 import { ShoppingCart } from "../ShoppingCart";
 
-export function NavHeader() {
+interface NavHeaderProps {
+  productsCount?: number;
+}
+
+export function NavHeader({ productsCount = 0 }: NavHeaderProps) {
   return (
     <nav>
       <ul className="flex gap-4 text-xl">
@@ -21,7 +25,7 @@ export function NavHeader() {
           </li>
         </NavLink>
 
-        <ShoppingCart />
+        <ShoppingCart productsCount={productsCount} />
       </ul>
     </nav>
   );

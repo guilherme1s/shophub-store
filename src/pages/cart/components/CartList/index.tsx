@@ -26,7 +26,7 @@ export function CartList({
   onIncreaseQuantity,
 }: CartListProps) {
   return (
-    <div className="bg-gray rounded-xl overflow-hidden">
+    <div className="bg-gray rounded-xl overflow-hidden h-fit">
       {list.map((product, index) => {
         const isLast = index === list.length - 1;
 
@@ -38,7 +38,7 @@ export function CartList({
             }`}
           >
             <div className="flex gap-4 items-center">
-              <div className="w-20 aspect-square overflow-hidden rounded-lg flex items-center justify-center bg-white p-1">
+              <div className="hidden md:flex w-20 aspect-square overflow-hidden rounded-lg items-center justify-center bg-white p-1">
                 <img
                   src={product.image}
                   alt={product.title}
@@ -57,7 +57,7 @@ export function CartList({
             <div className="flex flex-col items-end gap-2">
               <button
                 onClick={() => onRemoveProduct(product.id)}
-                className="p-2 text-primary hover:bg-primary/20 transition rounded-md"
+                className="p-2 text-primary hover:bg-primary/20 transition rounded-md cursor-pointer"
               >
                 <DeleteOutlineOutlinedIcon fontSize="medium" />
               </button>

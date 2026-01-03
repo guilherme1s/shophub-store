@@ -7,11 +7,15 @@ import { Skeleton } from "../../../../components/Skeleton";
 interface HeroProps extends ImgHTMLAttributes<HTMLImageElement> {
   isLoading?: boolean;
   isError?: boolean;
+  title: string;
+  url: string;
 }
 
 export function Hero({
   isLoading = false,
   isError = false,
+  title,
+  url,
   ...props
 }: HeroProps) {
   return (
@@ -46,7 +50,7 @@ export function Hero({
           </div>
 
           <div className="hidden md:flex flex-1">
-            <div className="relative w-full aspect-square rounded-2xl bg-white/10 overflow-hidden p-12">
+            <div className="relative w-full aspect-square rounded-2xl bg-white/10 overflow-hidden p-12 hover:p-10 transition">
               {isLoading && <Skeleton />}
 
               {!isError && !isLoading && (
@@ -56,7 +60,9 @@ export function Hero({
               )}
 
               {isError && !isLoading && (
-                <img {...props} className="w-full h-full object-contain" />
+                <NavLink to={url} title={title}>
+                  <img {...props} className="w-full h-full object-contain" />
+                </NavLink>
               )}
             </div>
           </div>

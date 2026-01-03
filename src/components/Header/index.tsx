@@ -5,9 +5,11 @@ import { ShoppingCart } from "../ShoppingCart";
 import { MobileMenu } from "../MobileMenu";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useCart } from "../../contexts/CartContext";
 
 export function Header() {
   const [openMenu, setOpenMenu] = useState(false);
+  const { totalItems } = useCart();
 
   const handleOpenMenu = () => {
     setOpenMenu((prev) => !prev);
@@ -31,11 +33,12 @@ export function Header() {
             <div className="w-full ml-4 lg:ml-10">
               <Search />
             </div>
-            <NavHeader />
+            <NavHeader productsCount={totalItems} />
           </div>
 
           <div className="flex md:hidden items-center gap-3">
-            <ShoppingCart />
+            <ShoppingCart productsCount={totalItems} />
+
             <button onClick={handleOpenMenu} className="p-2">
               <MenuIcon fontSize="large" />
             </button>

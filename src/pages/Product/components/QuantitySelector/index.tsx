@@ -2,20 +2,31 @@ import RemoveOutlinedIcon from "@mui/icons-material/RemoveOutlined";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
 interface QuantitySelectorProps {
+  variant?: "white" | "gray";
   quantity: number;
   max: number;
-  onHandleQuantity: (action: string) => void;
+  onIncreaseQuantity: () => void;
+  onDecreaseQuantity: () => void;
 }
 
 export function QuantitySelector({
   quantity,
   max,
-  onHandleQuantity,
+  variant = "gray",
+  onIncreaseQuantity,
+  onDecreaseQuantity,
 }: QuantitySelectorProps) {
+  const VariantColors = {
+    white: "bg-white",
+    gray: "bg-gray",
+  };
+
   return (
-    <div className="flex items-center bg-gray-100 rounded-lg border border-gray-300">
+    <div
+      className={`flex items-center rounded-lg border border-gray-300 ${VariantColors[variant]}`}
+    >
       <button
-        onClick={() => onHandleQuantity("remove")}
+        onClick={onDecreaseQuantity}
         disabled={quantity <= 1}
         className="p-2 hover:bg-gray-200 active:bg-gray-300 transition border-r border-gray-300 cursor-pointer"
       >
@@ -27,7 +38,7 @@ export function QuantitySelector({
       </span>
 
       <button
-        onClick={() => onHandleQuantity("add")}
+        onClick={onIncreaseQuantity}
         disabled={quantity >= max}
         className="p-2 hover:bg-gray-200 active:bg-gray-300 transition border-l border-gray-300 cursor-pointer"
       >
