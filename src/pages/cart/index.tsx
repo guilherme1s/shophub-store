@@ -1,7 +1,7 @@
 import { Container } from "../../components/Container";
 import { SectionTitle } from "../../components/SectionTitle";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import { EmpryCart } from "./components/EmptyCart";
+import { EmptyCart } from "./components/EmptyCart";
 import { useCart } from "../../contexts/CartContext";
 import { CartList } from "./components/CartList";
 import { OrderSumary } from "./components/OrderSumary";
@@ -33,7 +33,7 @@ export function Cart() {
       <section className="mt-10">
         <Container>
           {items.length === 0 ? (
-            <EmpryCart />
+            <EmptyCart />
           ) : (
             <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
               <CartList

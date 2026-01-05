@@ -107,7 +107,7 @@ export function ProductDetails({
 
           <div className="flex flex-col lg:flex-row gap-4">
             <button
-              className="p-3 bg-white border border-primary text-primary rounded-lg flex gap-2 w-full justify-center cursor-pointer transition"
+              className="p-3 items-center bg-white border border-primary text-primary rounded-lg flex gap-2 w-full justify-center cursor-pointer transition"
               onClick={onAddProductToCart}
               disabled={added}
             >

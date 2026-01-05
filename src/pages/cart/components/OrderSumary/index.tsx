@@ -31,7 +31,7 @@ export function OrderSumary({ subtotal, shipping, total }: OrderSumaryProps) {
           <p className="font-bold">{formatPrice(total)}</p>
         </div>
 
-        <NavLink to="#">
+        <NavLink to="/pagamento">
           <button className="p-2 w-full bg-white text-primary rounded-lg text-lg font-bold cursor-pointer">
             Ir Para Pagamento
           </button>

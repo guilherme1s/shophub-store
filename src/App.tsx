@@ -6,6 +6,7 @@ import { DefaultLayout } from "./layouts/DefaultLayout";
 import { ProductProvider } from "./contexts/ProductContext";
 import { Product } from "./pages/Product";
 import { CartProvider } from "./contexts/CartContext";
+import { Payment } from "./pages/Payment";
 
 export function App() {
   return (
@@ -18,6 +19,7 @@ export function App() {
               <Route path="/catalogo" element={<Catalog />} />
               <Route path="/carrinho" element={<Cart />} />
               <Route path="/produto/:id/:slug" element={<Product />} />
+              <Route path="/pagamento" element={<Payment />} />
             </Routes>
           </DefaultLayout>
         </BrowserRouter>

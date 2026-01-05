@@ -1,18 +1,15 @@
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import { NavLink } from "react-router-dom";
 
-export function EmptyCart() {
+export function EmptyPendingPayments() {
   return (
     <div className="bg-gray w-full flex flex-col justify-center items-center gap-6 py-20 text-gray-600 rounded-lg">
       <span className="text-[90px] text-gray-400 leading-none">
-        <ShoppingBagOutlinedIcon fontSize="inherit" />
+        <AttachMoneyIcon fontSize="inherit" />
       </span>
 
       <div className="text-center">
-        <h4 className="text-2xl mb-2">Seu carrinho está vazio</h4>
-        <p className="text-lg">
-          Adicione itens ao seu carrinho e eles aparecerão aqui
-        </p>
+        <h4 className="text-2xl mb-2">Nenhum pagamento pendente</h4>
       </div>
 
       <NavLink to="/catalogo">
