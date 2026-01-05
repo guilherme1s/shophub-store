@@ -22,9 +22,7 @@ export function Payment() {
     selectedPaymentMethod,
   } = useCheckout();
 
-  const handleSaveShipping = (data: ShippingData) => {
-    console.log("DADOS DO FORM:", data);
-  };
+  const handleSaveShipping = (data: ShippingData) => {};
 
   const buttonEnabledClass =
     "cursor-pointer bg-primary hover:bg-primary-hover transition";
