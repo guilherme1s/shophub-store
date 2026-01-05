@@ -105,7 +105,7 @@ export function ShippingDataForm({
               maxLength={11}
               inputMode="numeric"
               className={`${inputBase} ${errors.phone ? inputError : inputOk}`}
-              placeholder="Telefone"
+              placeholder="Telefone (apenas números)"
               {...register("phone", {
                 required: "Telefone é obrigatório",
                 minLength: { value: 10, message: "Telefone inválido" },
@@ -139,7 +139,7 @@ export function ShippingDataForm({
               maxLength={8}
               inputMode="numeric"
               className={`${inputBase} ${errors.cep ? inputError : inputOk}`}
-              placeholder="CEP"
+              placeholder="CEP (apenas números)"
               {...register("cep", {
                 required: "CEP é obrigatório",
                 minLength: { value: 8, message: "CEP deve ter 8 números" },

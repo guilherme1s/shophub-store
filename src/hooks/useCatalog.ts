@@ -18,6 +18,12 @@ export function useCatalog() {
     );
   }, [searchParams]);
 
+
+  useEffect(() => {
+  const qFromUrl = searchParams.get("q") ?? "";
+  setSearchText(qFromUrl);
+}, [searchParams]);
+
   const handleChangeCategories = (categories: string[]) => {
     setSelectedCategories(categories);
 
