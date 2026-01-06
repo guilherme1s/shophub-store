@@ -19,7 +19,7 @@ export function Header() {
     <>
       <header className={`${openMenu ? "" : "border-b-4 border-primary"}`}>
         <div className="text-center text-xs md:text-sm font-semibold py-2 bg-primary text-white">
-          Frete Grátis em Compras Acima de R$ 50 | Use o Código BEMVINDO10
+          Frete Grátis em Compras Acima de R$ 100,00 | Use o Código BEMVINDO10
         </div>
 
         <div className="flex items-center justify-between max-w-7xl mx-4 md:mx-8 xl:mx-auto py-4">
