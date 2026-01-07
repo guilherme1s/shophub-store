@@ -16,7 +16,6 @@ export function Product() {
     return;
   }
 
-  const totalPrice = product.price * quantity;
   const translatedCategory = categoryMap[product.category] ?? product.category;
 
   const handleIncreaseQuantity = () => {
@@ -52,14 +51,14 @@ export function Product() {
             title={product.title}
             src={product.image}
             rate={product.rating.rate}
-            price={totalPrice}
+            price={product.price}
             description={product.description}
             reviews={product.rating.count}
             max={10}
             added={add}
+            quantity={quantity}
             onIncreaseQuantity={handleIncreaseQuantity}
             onDecreaseQuantity={handleDecreaseQuantity}
-            quantity={quantity}
             onAddProductToCart={handleAddProductToCart}
           />
         </div>

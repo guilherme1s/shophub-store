@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { ProductGrid } from "../../../Components/product/ProductGrid";
 import { SectionTitle } from "../../../Components/SectionTitle";
 import { useCatalog } from "../../../hooks/useCatalog";
@@ -10,12 +11,14 @@ interface SuggestionProps {
 export function Suggestion({ category, productId }: SuggestionProps) {
   const { products, error, loading } = useCatalog();
 
-  const productsByCategory = products
-    .filter(
-      (product) => product.category === category && product.id !== productId
-    )
-    .sort(() => Math.random() - 0.5)
-    .slice(0, 3);
+  const productsByCategory = useMemo(() => {
+    return products
+      .filter(
+        (product) => product.category === category && product.id !== productId
+      )
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 3);
+  }, [products, category, productId]);
 
   return (
     <div>
