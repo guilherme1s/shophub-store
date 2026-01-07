@@ -1,5 +1,5 @@
-import { Container } from "../../components/Container";
-import { ProductDetails } from "./components/ProductDetails";
+import { Container } from "../../Components/Container";
+import { ProductDetails } from "./components/productDetails/ProductDetails";
 import { useState } from "react";
 import { useGetSelectedProduct } from "../../hooks/useGetSelectedProduct";
 import { useCart } from "../../contexts/CartContext";

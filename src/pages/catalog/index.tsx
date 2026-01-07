@@ -1,7 +1,7 @@
-import { Container } from "../../components/Container";
-import { ProductGrid } from "../../components/ProductGrid";
-import { SectionTitle } from "../../components/SectionTitle";
-import { Filter } from "./components/Filter";
+import { Container } from "../../Components/Container";
+import { ProductGrid } from "../../Components/product/ProductGrid";
+import { SectionTitle } from "../../Components/SectionTitle";
+import { Filter } from "./components/filter/Filter";
 import { useCatalog } from "../../hooks/useCatalog";
 
 export function Catalog() {

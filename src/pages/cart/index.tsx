@@ -1,5 +1,5 @@
-import { Container } from "../../components/Container";
-import { SectionTitle } from "../../components/SectionTitle";
+import { Container } from "../../Components/Container";
+import { SectionTitle } from "../../Components/SectionTitle";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import { EmptyCart } from "./components/EmptyCart";
 import { useCart } from "../../contexts/CartContext";

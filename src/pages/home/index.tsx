@@ -1,9 +1,9 @@
-import { Hero } from "../../pages/home/components/Hero";
-import { PromoSection } from "../../pages/home/components/PromoSection";
-import { ShopCategory } from "./components/ShopCategory";
+import { Hero } from "./components/Hero";
+import { PromoSection } from "./components/PromoSection";
+import { ShopCategory } from "./components/category/ShopCategory";
 import { categories } from "../../data/categories";
 
-import { Container } from "../../components/Container";
+import { Container } from "../../Components/Container";
 import { useProduct } from "../../contexts/ProductContext";
 import { useEffect, useState } from "react";
 import { BestSeller } from "./components/BestSeller";

@@ -1,6 +1,6 @@
-import { Container } from "../../components/Container";
-import { SectionTitle } from "../../components/SectionTitle";
-import { PaymentMethod } from "./components/PaymentMethod";
+import { Container } from "../../Components/Container";
+import { SectionTitle } from "../../Components/SectionTitle";
+import { PaymentMethod } from "./components/paymentMethod/PaymentMethod";
 import { ShippingDataForm } from "./components/ShippingDataForm";
 import type { ShippingData } from "../../types/shippingData";
 import { PaymentOrderSumary } from "./components/PaymentOrderSumary";
