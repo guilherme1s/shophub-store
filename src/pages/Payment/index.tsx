@@ -2,7 +2,6 @@ import { Container } from "../../Components/Container";
 import { SectionTitle } from "../../Components/SectionTitle";
 import { PaymentMethod } from "./components/paymentMethod/PaymentMethod";
 import { ShippingDataForm } from "./components/ShippingDataForm";
-import type { ShippingData } from "../../types/shippingData";
 import { PaymentOrderSumary } from "./components/PaymentOrderSumary";
 import { PaymentFinishedDialog } from "./components/PaymentFinishedDialog";
 import { EmptyPendingPayments } from "./components/EmptyPendingPayments";
@@ -22,7 +21,7 @@ export function Payment() {
     selectedPaymentMethod,
   } = useCheckout();
 
-  const handleSaveShipping = (data: ShippingData) => {};
+  const handleSaveShipping = () => {};
 
   const buttonEnabledClass =
     "cursor-pointer bg-primary hover:bg-primary-hover transition";
