@@ -1,10 +1,36 @@
 # ShopHub
 
-Aplicação de e-commerce moderna, que implementa um fluxo completo de compra semelhante a plataformas reais do mercado. O sistema consome dados de produtos via API REST (Fake Store API), realizando tratamento, organização e exibição dinâmica das informações. Conta com várias páginas como catálogo com filtros, página de produto, gerenciamento de carrinho, checkout estruturado e arquitetura baseada em componentes, com foco em performance, escalabilidade e experiência do usuário.
+Aplicação de e-commerce desenvolvida com React e TypeScript, implementando um fluxo completo de compra inspirado em plataformas reais. O sistema consome dados da Fake Store API, realiza tratamento das informações e apresenta catálogo dinâmico com filtros persistidos na URL, carrinho global e processo estruturado de checkout.
 
-**Tecnologias:** React, TypeScript, Tailwind CSS, Context API, Consumo de API REST
+## Funcionalidades
 
-**Link do projeto:** https://shophub-loja.vercel.app/
+- Listagem dinâmica de produtos via API REST
+- Filtros com persistência utilizando query params na URL
+- Página de detalhes do produto
+- Adição e remoção de itens no carrinho
+- Controle de quantidade por item
+- Cálculo automático de subtotal e total
+- Fluxo de checkout estruturado
+- Página de confirmação de compra
+
+## Decisões Técnicas
+
+- **Context API** para gerenciamento global do carrinho
+- **React Router** para navegação entre páginas
+- **useSearchParams** para sincronização de filtros com a URL
+- Estrutura baseada em componentização e separação por responsabilidade
+- Formulário com validações
+- Consumo de API REST com tratamento e tipagem forte utilizando TypeScript
+- Estilização com **Tailwind CSS** focada em responsividade e organização visual
+
+## Tecnologias
+
+- React
+- TypeScript
+- Tailwind CSS
+- React Router
+- Context API
+- Consumo de API REST (Fake Store API)
 
 ## Resultados
 
