@@ -55,6 +55,6 @@ Aplicação de e-commerce desenvolvida com React e TypeScript, implementando um 
 
 ## Links Úteis
 
-- [Linkedin](https://www.linkedin.com/in/guilherme-silva-evangelista022)
+- [Linkedin](https://www.linkedin.com/in/guilherme-silva-evangelista)
 - [Portfólio](https://portfolio-guilherme-evangelista.vercel.app/)
 
